@@ -16,8 +16,8 @@ class UserConfig:
 
     origin = "kindle"
 
-    api_key = "3bbad78569157a30a7e15df2ef77f282"
-    base_url = "http://dev.hlts.app"
+    api_key = ""
+    base_url = ""
 
 
 class ApiConfig:

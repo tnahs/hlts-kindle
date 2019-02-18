@@ -7,19 +7,18 @@ from app.kindle import Kindle
 from app.api import api_connect, api_import
 from app.config import UserConfig, ApiConfig
 
-"""
-
-TO RUN:
-
-python3 path/to/run.py path/to/myclippings.txt
-
-NOTE: This does not support `notes` and thus `tags` nor `collections`. Not sure
-if Kindle supports adding notes.
-
-"""
-
 
 if __name__ == "__main__":
+
+    if not UserConfig.base_url:
+
+        print("App URL is not set! Exiting!")
+        exit(-1)
+
+    elif not UserConfig.api_key:
+
+        print("API key is not set! Exiting!")
+        exit(-1)
 
     try:
 
@@ -36,7 +35,7 @@ if __name__ == "__main__":
 
     except IndexError:
 
-        print("'My Clippings.txt' file not specified!")
+        print("'My Clippings.txt' file not specified! Exiting!")
         exit(-1)
 
     except Exception as error:
